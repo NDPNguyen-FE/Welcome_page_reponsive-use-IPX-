@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+$color:(twitter:#76A9EA,
+    facebook:#475993,
+    signup:#3C82FF,
+    white:#ffffff,
+    gray:#A8A8A8);
+
+$padding: 15px;
+
+$margin: 30px;
+
+@function color($color-name) {
+    @return map-get($color, $color-name);
+}
+
+form {
+    width: 100%;
+    height: 100vh;
+    padding: $padding;
+
+    header {
+        margin-top: $margin;
+        text-align: center;
+        font-family: "Roboto";
+
+        p {
+            font-size: 26px;
+        }
+
+        span {
+            font-size: 14px;
+            color: color(gray);
+        }
+    }
+}
+
+#image {
+    display: flex;
+    justify-content: center;
+    margin-top: $margin;
+}
+
+#footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: $margin;
+    font-family: "Roboto";
+    text-align: center;
+
+    #button {
+        width: 100%;
+        display: flex;
+
+        button {
+            width: 50%;
+            height: 60px;
+            margin: 0 5px;
+            color: color(white);
+            border: none;
+            border-radius: 5px;
+
+            &>i {
+                z-index: 1;
+            }
+
+            &.twitter-button {
+                background-color: color(twitter);
+            }
+
+            &.face-button {
+                background-color: color(facebook);
+            }
+        }
+    }
+
+    span {
+        margin: 35px 0;
+        line-height: 20px;
+        font-size: 13px;
+        color: color(gray);
+    }
+
+    button {
+        font-size: 16px;
+        height: 60px;
+        background-color: color(signup);
+        border: none;
+        font-family: "Roboto";
+        color: color(white);
+        border-radius: 5px;
+    }
+
+}
